@@ -32,7 +32,7 @@ int main(){
    *use get and set functions to manipulate your object, and
    *print the object content to the screen
    */
-  int stu_count = 1;
+  int stu_count = 1; // This int will be added to 20200000 to generate a unique id for each student
   while( getline(domesticFile, line) ) {
     /*process each line, get each field separated by a comma.
      *We use istringstream to handle it.
