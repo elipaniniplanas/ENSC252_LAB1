@@ -2,6 +2,7 @@
 #include "student.hpp"
 #include <iostream>
 
+//Student constructor
 STUDENT::STUDENT(string first, string last, float cgpa, int score, int id)
 {
         if(cgpa > 4.3 || cgpa < 0)
@@ -20,14 +21,28 @@ STUDENT::STUDENT(string first, string last, float cgpa, int score, int id)
         SCORE = score;
         ID = id;
 }
+//Below are the mutator funtions for the Student class
 STUDENT::setfname(string first)
 {
         fname = first;
 }
-STUDENT::setfname(string first)
+STUDENT::setlname(string last)
 {
-        fname = first;
+        lname = last;
 }
+STUDENT::setCGPA(float cgpa)
+{
+        CGPA = cgpa;
+}
+STUDENT::setscore(int score)
+{
+        SCORE = score;
+}
+STUDENT::setID(int id)
+{
+        ID = id;
+}
+//ToeflScore constructor
 ToeflScore::ToeflScore(int read, int write, int listen, int speak)
 {
         if(read <0 || read > 30.2)
@@ -53,14 +68,29 @@ ToeflScore::ToeflScore(int read, int write, int listen, int speak)
                 cout << "sorry, your speaking toeflScore is invalid";
 
         }
-
-
-
         reading = read;
         writing = write;
         listening = listen;
         speaking = speak;
 }
+//Below are the mutator functions for the ToeflScore class
+void setreading(int read)
+{
+        reading = read;
+}
+void setwriting(int write)
+{
+        writing = write;
+}
+void setlistening(int listen)
+{
+        listening = listen;
+}
+void setspeaking(int speak)
+{
+        speaking = speak;
+}
+//This function returns the sum of all of the scores in a ToeflScore object
 int ToeflScore::totalscore(int read, int write, int listen, int speak)
 {
         int total;
