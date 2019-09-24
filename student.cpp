@@ -72,6 +72,7 @@ ToeflScore::ToeflScore(int read, int write, int listen, int speak)
         writing = write;
         listening = listen;
         speaking = speak;
+        totalscore = read + write + listen + speak;
 }
 //Below are the mutator functions for the ToeflScore class
 void setreading(int read)
@@ -91,11 +92,9 @@ void setspeaking(int speak)
         speaking = speak;
 }
 //This function returns the sum of all of the scores in a ToeflScore object
-int ToeflScore::totalscore(int read, int write, int listen, int speak)
+void ToeflScore::settotalscore(int read, int write, int listen, int speak)
 {
-        int total;
-        total = read + write + listen + speak;
-        return total;
+        totalscore = read + write + listen + speak;
 }
 
 DomesticStudent::DomesticStudent(string first, string last, float cgpa, int score, int id, string pv):
