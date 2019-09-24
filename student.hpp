@@ -41,13 +41,14 @@ public:
         //This is the mutator funtion for the listening score
         void setspeaking(int speak);
         //This is the mutator funtion for the speaking score
-        int totalscore(int read, int write, int listn, int speak);
+        void settotalscore(int read, int write, int listn, int speak);
         //This function returns the sum of all of the scores in an object
 private:
         int reading;
         int writing;
         int listening;
         int speaking;
+        int totalscore;
 };
 
 class DomesticStudent : public STUDENT
