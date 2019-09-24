@@ -56,7 +56,9 @@ class DomesticStudent : public STUDENT
 {
 public:
         DomesticStudent(string first, string last, float cgpa, int score, int id, string pv);
-        void set(string first, string last, float cgpa, int score, int id, string pv);
+        //This is the constructor for the DomesticStudent class
+        void setprovidence(string pv);
+        //This is the mutator function for the porvidence
 private:
         string province;
 };
