@@ -45,25 +45,25 @@ STUDENT::setID(int id)
 //ToeflScore constructor
 ToeflScore::ToeflScore(int read, int write, int listen, int speak)
 {
-        if(read <0 || read > 30.2)
+        if(read <0 || read > 30)
         {
                 cout << "sorry, your reading toeflScore is invalid";
 
         }
 
-        if(write <0 || write > 30.2)
+        if(write <0 || write > 30)
         {
                 cout << "sorry, your writing toeflScore is invalid";
 
         }
 
-        if(listen <0 || listen > 30.2)
+        if(listen <0 || listen > 30)
         {
                 cout << "sorry, your listening toeflScore is invalid";
 
         }
 
-        if(speak <0 || speak > 30.2)
+        if(speak <0 || speak > 30)
         {
                 cout << "sorry, your speaking toeflScore is invalid";
 
