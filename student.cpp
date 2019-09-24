@@ -57,7 +57,7 @@ float STUDENT::getCGPA()
 }
 int STUDENT::getscore()
 {
-        reutrn(SCORE);
+        return(SCORE);
 }
 int STUDENT::getID()
 {
