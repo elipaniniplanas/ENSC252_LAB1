@@ -22,25 +22,46 @@ STUDENT::STUDENT(string first, string last, float cgpa, int score, int id)
         ID = id;
 }
 //Below are the mutator funtions for the Student class
-STUDENT::setfname(string first)
+void STUDENT::setfname(string first)
 {
         fname = first;
 }
-STUDENT::setlname(string last)
+void STUDENT::setlname(string last)
 {
         lname = last;
 }
-STUDENT::setCGPA(float cgpa)
+void STUDENT::setCGPA(float cgpa)
 {
         CGPA = cgpa;
 }
-STUDENT::setscore(int score)
+void STUDENT::setscore(int score)
 {
         SCORE = score;
 }
-STUDENT::setID(int id)
+void STUDENT::setID(int id)
 {
         ID = id;
+}
+//Below are the accessor functions for the Student class
+string STUDENT::getfname()
+{
+        return(fname);
+}
+string STUDENT::getlname()
+{
+        return(lname);
+}
+float STUDENT::getCGPA()
+{
+        return(CGPA);
+}
+int STUDENT::getscore()
+{
+        reutrn(SCORE);
+}
+int STUDENT::getID()
+{
+        return(ID);
 }
 //ToeflScore constructor
 ToeflScore::ToeflScore(int read, int write, int listen, int speak)
@@ -91,12 +112,33 @@ void setspeaking(int speak)
 {
         speaking = speak;
 }
-//This function returns the sum of all of the scores in a ToeflScore object
-void ToeflScore::settotalscore(int read, int write, int listen, int speak)
+//This sets the sum of all of the scores in a ToeflScore object
+void ToeflScore::settotalscore()
 {
-        totalscore = read + write + listen + speak;
+        totalscore = reading + writing + listening + speaking;
 }
-
+//Below are the accessor functions for the ToeflScore class
+int getreading()
+{
+        return(reading);
+}
+int getwriting()
+{
+        return(writing);
+}
+int getlistening()
+{
+        return(listening);
+}
+int getspeaking()
+{
+        return(speaking);
+}
+int gettotalscore()
+{
+        return(totalscore);
+}
+//Constructor for the DomesticStudent class
 DomesticStudent::DomesticStudent(string first, string last, float cgpa, int score, int id, string pv):
         STUDENT( first, last, cgpa, score, id)
 {
