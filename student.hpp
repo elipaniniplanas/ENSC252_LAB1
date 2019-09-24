@@ -50,15 +50,13 @@ private:
         int speaking;
 };
 
-
-
 class DomesticStudent : public STUDENT
 {
 public:
         DomesticStudent(string first, string last, float cgpa, int score, int id, string pv);
         //This is the constructor for the DomesticStudent class
-        void setprovidence(string pv);
-        //This is the mutator function for the porvidence
+        void setprovince(string pv);
+        //This is the mutator function for the province
 private:
         string province;
 };
