@@ -96,19 +96,19 @@ ToeflScore::ToeflScore(int read, int write, int listen, int speak)
         totalscore = read + write + listen + speak;
 }
 //Below are the mutator functions for the ToeflScore class
-void setreading(int read)
+void ToeflScore::setreading(int read)
 {
         reading = read;
 }
-void setwriting(int write)
+void ToeflScore::setwriting(int write)
 {
         writing = write;
 }
-void setlistening(int listen)
+void ToeflScore::setlistening(int listen)
 {
         listening = listen;
 }
-void setspeaking(int speak)
+void ToeflScore::setspeaking(int speak)
 {
         speaking = speak;
 }
@@ -118,29 +118,29 @@ void ToeflScore::settotalscore()
         totalscore = reading + writing + listening + speaking;
 }
 //Below are the accessor functions for the ToeflScore class
-int getreading()
+int ToeflScore::getreading()
 {
         return(reading);
 }
-int getwriting()
+int ToeflScore::getwriting()
 {
         return(writing);
 }
-int getlistening()
+int ToeflScore::getlistening()
 {
         return(listening);
 }
-int getspeaking()
+int ToeflScore::getspeaking()
 {
         return(speaking);
 }
-int gettotalscore()
+int ToeflScore::gettotalscore()
 {
         return(totalscore);
 }
 //Constructor for the DomesticStudent class
 DomesticStudent::DomesticStudent(string first, string last, float cgpa, int score, int id, string pv):
-        STUDENT( first, last, cgpa, score, id)
+        STUDENT(first, last, cgpa, score, id)
 {
         province = pv;
 }
