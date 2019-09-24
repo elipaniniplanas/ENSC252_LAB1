@@ -101,45 +101,17 @@ int ToeflScore::totalscore(int read, int write, int listen, int speak)
 DomesticStudent::DomesticStudent(string first, string last, float cgpa, int score, int id, string pv):
         STUDENT( first, last, cgpa, score, id)
 {
-/*      if(cgpa > 4.3 || cgpa < 0)
-        {
-                cout<<"sorry, but your CGPA is invalid";
-                return 0;
-        }
-        if(score < 0 || score > 100)
-        {
-                cout<<"sorry, but your research score is invalid";
-                return 0;
-        }
-        fname = first;
-        lname = last;
-        CGPA = cgpa;
-        CGPA = cgpa;
-        SCORE = score;
-        ID = id;
         province = pv;
-*/
+}
+//Mutator function for DomesticStudent, it inherits all of the mutator functions in its parent class Student
+void DomesticStudent::setprovince(string pv)
+{
+        province = pv;
 }
 
 InternationalStudent::InternationalStudent(string first, string last, float cgpa, int score, int id, string co, int toefl):
         STUDENT( first, last, cgpa, score, id)
 {
-/*      if(cgpa > 4.3 || cgpa < 0)
-        {
-                cout<<"sorry, but your CGPA is invalid";
-                return 0;
-        }
-        if(score < 0 || score > 100)
-        {
-                cout<<"sorry, but your research score is invalid";
-                return 0;
-        }
-        fname = first;
-        lname = last;
-        CGPA = cgpa;
-        CGPA = cgpa;
-        SCORE = score;
-        ID = id;
         country = co;
-        TOEFL = toefl;*/
+        TOEFL = toefl;
 }
