@@ -19,15 +19,15 @@ public:
         //This is the mutator function for gpa
         void setID(int id);
         //This is the mutator function for id
-        string getfname(string first);
+        string getfname();
         //This is the accessor function for first name
-        string getlname(string last);
+        string getlname();
         //This is the accessor function for last name
-        float getCGPA(float cgpa);
+        float getCGPA();
         //This is the accessor function for gpa
-        int getscore(int score);
+        int getscore();
         //This is the accessor function for gpa
-        int getID(int id);
+        int getID();
         //This is the accessor function for id
 
 private:
@@ -51,17 +51,17 @@ public:
         //This is the mutator function for the listening score
         void setspeaking(int speak);
         //This is the mutator function for the speaking score
-        void settotalscore(int read, int write, int listn, int speak);
+        void settotalscore();
         //This is the mutator function for the sum of all of the scores in an object
-        int getreading(int read);
+        int getreading();
         //This is the accessor function for the reading score
-        int getwriting(int write);
+        int getwriting();
         //This is the accessor function for the writing score
-        int getlistening(int listen);
+        int getlistening();
         //This is the accessor function for the listening score
-        int getspeaking(int speak);
+        int getspeaking();
         //This is the accessor function for the speaking score
-        int gettotalscore(int total);
+        int gettotalscore();
         //This is the accessor function for the sum of all of the scores in an object
 
 private:
@@ -79,7 +79,7 @@ public:
         //This is the constructor for the DomesticStudent class
         void setprovince(string pv);
         //This is the mutator function for the province
-        string getprovince(string pv);
+        string getprovince();
         //This is the accessor function for the province
 private:
         string province;
@@ -95,9 +95,9 @@ public:
         //This is the mutator function for the country member
         void settoefl(int toefl);
         //This is the mutator function for the toefl member
-        string getcountry(string co);
+        string getcountry();
         //This is the accessor function for the country member
-        int gettoefl(int toefl);
+        int gettoefl();
         //This is the accessor function for the toefl member
 private:
         string country;
