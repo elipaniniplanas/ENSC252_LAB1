@@ -106,6 +106,14 @@ STUDENT::STUDENT(string first, string last, float cgpa, int score, int id)
         SCORE = score;
         ID = id;
 }
+STUDENT::STUDENT()
+{
+        fname = " ";
+        lname = " ";
+        CGPA = 0.0;
+        SCORE = 0;
+        ID = 0;
+}
 //Below are the mutator funtions for the Student class
 void STUDENT::setfname(string first)
 {
@@ -154,6 +162,12 @@ DomesticStudent::DomesticStudent(string first, string last, float cgpa, int scor
 {
         province = pv;
 }
+//This Constructor is for no inputs
+DomesticStudent::DomesticStudent():
+        STUDENT()
+{
+        province = " ";
+}
 //Mutator function for DomesticStudent, it inherits all of the mutator functions in its parent class Student
 void DomesticStudent::setprovince(string pv)
 {
@@ -169,6 +183,11 @@ InternationalStudent::InternationalStudent(string first, string last, float cgpa
         TOEFL.setwriting(write);
         TOEFL.setlistening(listen);
         TOEFL.setspeaking(speak);
+}
+InternationalStudent::InternationalStudent():
+        STUDENT()
+{
+        country = " ";
 }
 //Mutator functions for the InternationalStudent class
 void InternationalStudent::setcountry(string co)
