@@ -80,14 +80,13 @@ private:
 class DomesticStudent : public STUDENT
 {
 public:
+        //Constructors
         DomesticStudent(string first, string last, float cgpa, int score, int id, string pv);
-        //This is the constructor for the DomesticStudent class
         DomesticStudent();
-        //This is the other constructor for the DomesticStudent class (blank input, sets 0 for all members)
+        //Mutator functions
         void setprovince(string pv);
-        //This is the mutator function for the province
+        //Accessor functions
         string getprovince();
-        //This is the accessor function for the province (returns a string datatype)
 private:
         string province;
 };
@@ -95,16 +94,14 @@ private:
 
 class InternationalStudent : public STUDENT
 {
-public:         
+public:    
+        //Constructors for InternationalStudent
         InternationalStudent(string first, string last, float cgpa, int score, int id, string co, int read, int write , int listen, int speak);
-        //This is the constructor for the InternationalStudent class
         InternationalStudent();
-        
+        //Mutator functions
         void setcountry(string co);
-        //This is the mutator function for the country member
-        string getcountry();
-        //This is the accessor function for the country member
-        
+        //Accessor functions
+        string getcountry();        
 private:
         string country;
         ToeflScore TOEFL;
