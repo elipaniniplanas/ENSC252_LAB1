@@ -96,6 +96,7 @@ class InternationalStudent : public STUDENT
 public:         
         InternationalStudent(string first, string last, float cgpa, int score, int id, string co, int read, int write , int listen, int speak);
         //This is the constructor for the InternationalStudent class
+        InternationalStudent();
         void setcountry(string co);
         //This is the mutator function for the country member
         string getcountry();
