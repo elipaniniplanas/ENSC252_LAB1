@@ -98,5 +98,5 @@ public:
         
 private:
         string country;
-        ToeflScore TOEFL(0, 0, 0, 0);
+        ToeflScore TOEFL{ToeflScore(0, 0, 0, 0)};
 };
