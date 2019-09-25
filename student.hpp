@@ -9,7 +9,7 @@ class ToeflScore
 public:
         ToeflScore(int read, int write, int listen, int speak);
         //Constructor function for ToeflScore
-        //ToeflScore();
+        ToeflScore();
         //Other Constructor for ToeflScore (blank inputs, sets 0 for all members)
         void setreading(int read);
         //This is the mutator function for the reading score
