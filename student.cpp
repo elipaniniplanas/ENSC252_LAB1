@@ -149,10 +149,31 @@ void DomesticStudent::setprovince(string pv)
 {
         province = pv;
 }
-
-InternationalStudent::InternationalStudent(string first, string last, float cgpa, int score, int id, string co, int toefl):
+//Constructor for the InternationalStudent class
+InternationalStudent::InternationalStudent(string first, string last, float cgpa, int score, int id, string co, ToeflScore toefl):
         STUDENT( first, last, cgpa, score, id)
 {
         country = co;
         TOEFL = toefl;
 }
+//Mutator functions for the InternationalStudent class
+void InternationalStudent::setcountry(string co)
+{
+        country = co;
+}
+void InternationalStudent::settoefl(ToeflScore toefl)
+{
+        TOEFL = toefl;
+}
+//Accessor Functions for the InternationalStudent class
+string InternationalStudent::getcountry()
+{
+        return(country);
+}
+ToeflScore InternationalStudent::gettoefl()
+{
+        return(TOEFL);
+}
+        
+        
+        
