@@ -4,6 +4,42 @@ using namespace std; //use namespace std
 #include <iostream>
 #pragma once
 
+class ToeflScore
+{
+public:
+        ToeflScore(int read, int write, int listen, int speak);
+        //Constructor function for ToeflScore
+        ToeflScore();
+        //Other COnstructor for ToeflScore
+        void setreading(int read);
+        //This is the mutator function for the reading score
+        void setwriting(int write);
+        //This is the mutator function for the writing score
+        void setlistening(int listen);
+        //This is the mutator function for the listening score
+        void setspeaking(int speak);
+        //This is the mutator function for the speaking score
+        void settotalscore();
+        //This is the mutator function for the sum of all of the scores in an object
+        int getreading();
+        //This is the accessor function for the reading score
+        int getwriting();
+        //This is the accessor function for the writing score
+        int getlistening();
+        //This is the accessor function for the listening score
+        int getspeaking();
+        //This is the accessor function for the speaking score
+        int gettotalscore();
+        //This is the accessor function for the sum of all of the scores in an object
+
+private:
+        int reading;
+        int writing;
+        int listening;
+        int speaking;
+        int totalscore;
+};
+
 class STUDENT
 {
 public:
@@ -38,45 +74,13 @@ private:
         int ID;//id
 };
 
-class ToeflScore
-{
-public:
-        ToeflScore(int read, int write , int listen, int speak);
-        //Constructor function for ToeflScore
-        void setreading(int read);
-        //This is the mutator function for the reading score
-        void setwriting(int write);
-        //This is the mutator function for the writing score
-        void setlistening(int listen);
-        //This is the mutator function for the listening score
-        void setspeaking(int speak);
-        //This is the mutator function for the speaking score
-        void settotalscore();
-        //This is the mutator function for the sum of all of the scores in an object
-        int getreading();
-        //This is the accessor function for the reading score
-        int getwriting();
-        //This is the accessor function for the writing score
-        int getlistening();
-        //This is the accessor function for the listening score
-        int getspeaking();
-        //This is the accessor function for the speaking score
-        int gettotalscore();
-        //This is the accessor function for the sum of all of the scores in an object
-
-private:
-        int reading;
-        int writing;
-        int listening;
-        int speaking;
-        int totalscore;
-};
-
 class DomesticStudent : public STUDENT
 {
 public:
         DomesticStudent(string first, string last, float cgpa, int score, int id, string pv);
         //This is the constructor for the DomesticStudent class
+        DomesticStudent()'
+        //This is the other constructor for the DomesticStudent class
         void setprovince(string pv);
         //This is the mutator function for the province
         string getprovince();
@@ -98,5 +102,5 @@ public:
         
 private:
         string country;
-        ToeflScore TOEFL{ToeflScore(0, 0, 0, 0)};
+        ToeflScore TOEFL{ToeflScore()};
 };
