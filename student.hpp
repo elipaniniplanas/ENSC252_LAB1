@@ -89,7 +89,7 @@ private:
 class InternationalStudent : public STUDENT
 {
 public:         
-        InternationalStudent(string first, string last, float cgpa, int score, int id, string co, ToeflScore toefl);
+        InternationalStudent(string first, string last, float cgpa, int score, int id, string co, int read, int write , int listen, int speak);
         //This is the constructor for the InternationalStudent class
         void setcountry(string co);
         //This is the mutator function for the country member
