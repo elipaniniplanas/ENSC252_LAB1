@@ -163,8 +163,7 @@ DomesticStudent::DomesticStudent(string first, string last, float cgpa, int scor
         province = pv;
 }
 //This Constructor is for no inputs
-DomesticStudent::DomesticStudent():
-        STUDENT
+DomesticStudent::DomesticStudent():STUDENT()
 {
         province = " ";
 }
