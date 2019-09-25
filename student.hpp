@@ -101,5 +101,5 @@ public:
         //This is the accessor function for the toefl member
 private:
         string country;
-        int TOEFL;
+        ToelfScore TOEFL;
 };
