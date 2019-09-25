@@ -45,6 +45,8 @@ class STUDENT
 public:
         STUDENT(string first, string last, float cgpa, int score, int id);
         //This is the constructor function
+        STUDENT();
+        //here
         void setfname(string first);
         //This is the mutator function for first name (takes datatype string for input)
         void setlname(string last);
