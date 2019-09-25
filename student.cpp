@@ -151,11 +151,14 @@ void DomesticStudent::setprovince(string pv)
 }
 //Constructor for the InternationalStudent class
 InternationalStudent::InternationalStudent(string first, string last, float cgpa, int score, int id, string co, int read, int write , int listen, int speak):
-        STUDENT(first, last, cgpa, score, id):
-        TOEFL(read, write, listen, speak)
+        STUDENT(first, last, cgpa, score, id)
 {
         country = co;
         //Since TOEFL is a seperate object of a different class, we will have to use the ToeflScore mutator functions
+        TOEFL.setreading(read);
+        TOEFL.setwriting(write);
+        TOEFL.setlistening(listen);
+        TOEFL.setspeaking(speak);
 }
 //Mutator functions for the InternationalStudent class
 void InternationalStudent::setcountry(string co)
