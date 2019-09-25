@@ -10,7 +10,7 @@ public:
         ToeflScore(int read, int write, int listen, int speak);
         //Constructor function for ToeflScore
         ToeflScore();
-        //Other COnstructor for ToeflScore
+        //Other Constructor for ToeflScore (blank inputs, sets 0 for all members)
         void setreading(int read);
         //This is the mutator function for the reading score
         void setwriting(int write);
@@ -46,25 +46,25 @@ public:
         STUDENT(string first, string last, float cgpa, int score, int id);
         //This is the constructor function
         void setfname(string first);
-        //This is the mutator function for first name
+        //This is the mutator function for first name (takes datatype string for input)
         void setlname(string last);
-        //This is the mutator function for last name
+        //This is the mutator function for last name (takes datatype string for input)
         void setCGPA(float cgpa);
-        //This is the mutator function for gpa
+        //This is the mutator function for gpa (takes datatype float for input)
         void setscore(int score);
-        //This is the mutator function for gpa
+        //This is the mutator function for the research-score (takes datatype int for input)
         void setID(int id);
-        //This is the mutator function for id
+        //This is the mutator function for id (takes datatype int for input)
         string getfname();
-        //This is the accessor function for first name
+        //This is the accessor function for first name (returns a string datatype)
         string getlname();
-        //This is the accessor function for last name
+        //This is the accessor function for last name (returns a string datatype)
         float getCGPA();
-        //This is the accessor function for gpa
+        //This is the accessor function for gpa (returns a float datatype)
         int getscore();
-        //This is the accessor function for gpa
+        //This is the accessor function for gpa (returns an int datatype)
         int getID();
-        //This is the accessor function for id
+        //This is the accessor function for id (returns an int datatype)
 
 private:
         string fname;//first name
@@ -72,6 +72,7 @@ private:
         float CGPA;//GPA
         int SCORE;//research score
         int ID;//id
+        //the id value will be set in the main.cpp
 };
 
 class DomesticStudent : public STUDENT
@@ -79,12 +80,12 @@ class DomesticStudent : public STUDENT
 public:
         DomesticStudent(string first, string last, float cgpa, int score, int id, string pv);
         //This is the constructor for the DomesticStudent class
-        DomesticStudent()'
-        //This is the other constructor for the DomesticStudent class
+        DomesticStudent();
+        //This is the other constructor for the DomesticStudent class (blank input, sets 0 for all members)
         void setprovince(string pv);
         //This is the mutator function for the province
         string getprovince();
-        //This is the accessor function for the province
+        //This is the accessor function for the province (returns a string datatype)
 private:
         string province;
 };
