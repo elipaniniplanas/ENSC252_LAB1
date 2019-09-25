@@ -185,7 +185,7 @@ InternationalStudent::InternationalStudent(string first, string last, float cgpa
         TOEFL.setspeaking(speak);
 }
 InternationalStudent::InternationalStudent():
-        STUDENT()
+        STUDENT
 {
         country = " ";
 }
