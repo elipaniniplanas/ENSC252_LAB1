@@ -164,7 +164,7 @@ DomesticStudent::DomesticStudent(string first, string last, float cgpa, int scor
 }
 //This Constructor is for no inputs
 DomesticStudent::DomesticStudent():
-        STUDENT()
+        STUDENT
 {
         province = " ";
 }
@@ -184,11 +184,7 @@ InternationalStudent::InternationalStudent(string first, string last, float cgpa
         TOEFL.setlistening(listen);
         TOEFL.setspeaking(speak);
 }
-InternationalStudent::InternationalStudent():
-        STUDENT
-{
-        country = " ";
-}
+InternationalStudent::InternationalStudent():STUDENT(), country(""){ }
 //Mutator functions for the InternationalStudent class
 void InternationalStudent::setcountry(string co)
 {
