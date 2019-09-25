@@ -9,7 +9,7 @@ class ToeflScore
 public:
         ToeflScore(int read, int write, int listen, int speak);
         //Constructor function for ToeflScore
-        ToeflScore();
+        //ToeflScore();
         //Other Constructor for ToeflScore (blank inputs, sets 0 for all members)
         void setreading(int read);
         //This is the mutator function for the reading score
@@ -97,6 +97,7 @@ public:
         InternationalStudent(string first, string last, float cgpa, int score, int id, string co, int read, int write , int listen, int speak);
         //This is the constructor for the InternationalStudent class
         InternationalStudent();
+        ""
         void setcountry(string co);
         //This is the mutator function for the country member
         string getcountry();
@@ -104,5 +105,5 @@ public:
         
 private:
         string country;
-        ToeflScore TOEFL{ToeflScore()};
+        ToeflScore TOEFL{ToeflScore(0, 0, 0, 0)};
 };
