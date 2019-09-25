@@ -93,12 +93,9 @@ public:
         //This is the constructor for the InternationalStudent class
         void setcountry(string co);
         //This is the mutator function for the country member
-        void settoefl(ToeflScore toefl);
-        //This is the mutator function for the toefl member
+        
         string getcountry();
         //This is the accessor function for the country member
-        ToeflScore gettoefl();
-        //This is the accessor function for the toefl member
 private:
         string country;
         ToeflScore TOEFL;
