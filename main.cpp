@@ -21,8 +21,8 @@ int main(){
 
   //Read the first line of domestic-stu.txt, which specifies
   //the file format. And then print it out to the screen
-  getline(domesticFile, line);
-  cout << "File format: " << line << endl;
+  getline(domesticFile, line);//this skips the first line about the file format
+  //cout << "File format: " << line << endl;
 
   /*Keep reading the rest of the lines in domestic-stu.txt.
    *In the example code here, I will read each data separated
@@ -64,6 +64,8 @@ int main(){
     researchScore = atoi(s_researchScore.c_str());
 
     //print the student info to the screen
+	  
+	  
     cout << "Domestic student " << stu_count << " " << firstName << " " 
 	 << lastName << " from " << province << " province has cgpa of "
 	 << cgpa << ", and research score of " << researchScore << endl;
