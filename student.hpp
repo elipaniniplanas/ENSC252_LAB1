@@ -89,17 +89,17 @@ private:
 class InternationalStudent : public STUDENT
 {
 public:         
-        InternationalStudent(string first, string last, float cgpa, int score, int id, string co, int toefl);
+        InternationalStudent(string first, string last, float cgpa, int score, int id, string co, ToeflScore toefl);
         //This is the constructor for the InternationalStudent class
         void setcountry(string co);
         //This is the mutator function for the country member
-        void settoefl(int toefl);
+        void settoefl(ToeflScore toefl);
         //This is the mutator function for the toefl member
         string getcountry();
         //This is the accessor function for the country member
-        int gettoefl();
+        ToeflScore gettoefl();
         //This is the accessor function for the toefl member
 private:
         string country;
-        ToelfScore TOEFL;
+        ToeflScore TOEFL;
 };
