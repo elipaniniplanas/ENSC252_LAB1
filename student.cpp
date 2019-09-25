@@ -34,7 +34,7 @@ ToeflScore::ToeflScore(int read, int write, int listen, int speak)
         speaking = speak;
         totalscore = read + write + listen + speak;
 }
-ToeflScore::ToeflScore();
+ToeflScore::ToeflScore()
 {
         reading = 0;
         writing = 0;
