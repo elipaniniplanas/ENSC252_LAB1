@@ -13,6 +13,9 @@
 int main(){
   //Read the domestic-stu.txt file and exit if failed
   string line;
+  DomesticStudent Dstudent(" ", " ", 0.0, 0, 0, " ");
+  InternationalStudent Istudent(" ", " ", 0.0, 0, 0, " ",0 ,0 ,0, 0);
+	
   ifstream domesticFile("domestic-stu.txt");
   if(!domesticFile.is_open()) {
     cout << "Unable to open file domestic-stu.txt" << endl;
@@ -33,6 +36,7 @@ int main(){
    *print the object content to the screen
    */
   int stu_count = 1; // This int will be added to 20200000 to generate a unique id for each student
+  int ID_count = 0;
   while( getline(domesticFile, line) ) {
     /*process each line, get each field separated by a comma.
      *We use istringstream to handle it.
@@ -63,14 +67,57 @@ int main(){
     getline(ss, s_researchScore, ',');
     researchScore = atoi(s_researchScore.c_str());
 
-    //print the student info to the screen
-	  
-	  
+   
+    Dstudent.setID(20200000+ID_count);
+    
+    //print the student info to the screen  
     cout << "Domestic student " << stu_count << " " << firstName << " " 
 	 << lastName << " from " << province << " province has cgpa of "
-	 << cgpa << ", and research score of " << researchScore << endl;
+	 << cgpa << ", and research score of " << researchScore << ", the assigned ID is " << Dstudent.getID() << endl;    
 
     stu_count++;
+    ID_count++;
+  }
+  while( getline(domesticFile, line) ) {
+    /*process each line, get each field separated by a comma.
+     *We use istringstream to handle it.
+     *Note in this example code here, we assume the file format
+     *is perfect and do NOT handle error cases. We will leave the
+     *error and exception handling of file format to Lab Assignment 4
+     */
+    istringstream ss(line);
+
+    string firstName, lastName, province, s_cgpa, s_researchScore;
+    float cgpa;
+    int researchScore;
+
+    //get firstName separated by comma
+    getline(ss, firstName, ',');
+
+    //get lastName separated by comma
+    getline(ss, lastName, ',');
+
+    //get province separated by comma
+    getline(ss, province, ',');
+
+    //get cpga separated by comma, and convert string to float
+    getline(ss, s_cgpa, ',');
+    cgpa = atof(s_cgpa.c_str());
+    
+    //get researchScore separated by comma, and convert it to int
+    getline(ss, s_researchScore, ',');
+    researchScore = atoi(s_researchScore.c_str());
+
+   
+    Istudent.setID(20200000+ID_count);
+    
+    //print the student info to the screen  
+    cout << "Domestic student " << stu_count << " " << firstName << " " 
+	 << lastName << " from " << province << " province has cgpa of "
+	 << cgpa << ", and research score of " << researchScore << ", the assigned ID is " << Istudent.getID() << endl;
+
+    stu_count++;
+    ID_count++;
   }
 
   //close your file
