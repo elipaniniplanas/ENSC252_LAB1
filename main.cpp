@@ -12,18 +12,16 @@
  */
 int main(){
   //Read the domestic-stu.txt file and exit if failed
-  string line;
-  DomesticStudent Dstudent(" ", " ", 0.0, 0, 0, " ");
-  InternationalStudent Istudent(" ", " ", 0.0, 0, 0, " ",0 ,0 ,0, 0);
-	
+  string line; //Used to retrieve the line in the files
+  DomesticStudent Dstudent(); // Constructed a DomesticStudent object
+  InternationalStudent Istudent(); // Constructed an InternationalStudent object
+  //accessing the domestic-stu.txt
   ifstream domesticFile("domestic-stu.txt");
   if(!domesticFile.is_open()) {
     cout << "Unable to open file domestic-stu.txt" << endl;
     return -1;
   }
 
-  //Read the first line of domestic-stu.txt, which specifies
-  //the file format. And then print it out to the screen
   getline(domesticFile, line);//this skips the first line about the file format
   //cout << "File format: " << line << endl;
 
@@ -35,8 +33,8 @@ int main(){
    *use get and set functions to manipulate your object, and
    *print the object content to the screen
    */
-  int stu_count = 1; // This int will be added to 20200000 to generate a unique id for each student
-  int ID_count = 0;
+  int Dstu_count = 1;
+  int ID_count = 20200000; // This int will increment each loop to generate a unique id for each student
   while( getline(domesticFile, line) ) {
     /*process each line, get each field separated by a comma.
      *We use istringstream to handle it.
@@ -45,40 +43,39 @@ int main(){
      *error and exception handling of file format to Lab Assignment 4
      */
     istringstream ss(line);
-
     string firstName, lastName, province, s_cgpa, s_researchScore;
     float cgpa;
     int researchScore;
-
     //get firstName separated by comma
     getline(ss, firstName, ',');
-
     //get lastName separated by comma
     getline(ss, lastName, ',');
-
     //get province separated by comma
     getline(ss, province, ',');
-
     //get cpga separated by comma, and convert string to float
     getline(ss, s_cgpa, ',');
     cgpa = atof(s_cgpa.c_str());
-    
     //get researchScore separated by comma, and convert it to int
     getline(ss, s_researchScore, ',');
     researchScore = atoi(s_researchScore.c_str());
-
-   
-    Dstudent.setID(20200000+ID_count);
-    
+    Dstudent.setID(ID_count);
     //print the student info to the screen  
     cout << "Domestic student " << stu_count << " " << firstName << " " 
 	 << lastName << " from " << province << " province has cgpa of "
 	 << cgpa << ", and research score of " << researchScore << ", the assigned ID is " << Dstudent.getID() << endl;    
 
-    stu_count++;
+    Dstu_count++;
     ID_count++;
   }
-  while( getline(domesticFile, line) ) {
+  
+  //accessing the international-stu.txt
+  ifstream internationalFile("international-stu.txt");
+  if(!internationalFile.is_open()) {
+    cout << "Unable to open file international-stu.txt" << endl;
+    return -1;
+  }
+  getline(internationalFile, line);//this skips the first line about the file format
+  while( getline(internationalFile, line) ) {
     /*process each line, get each field separated by a comma.
      *We use istringstream to handle it.
      *Note in this example code here, we assume the file format
@@ -86,30 +83,42 @@ int main(){
      *error and exception handling of file format to Lab Assignment 4
      */
     istringstream ss(line);
-
-    string firstName, lastName, province, s_cgpa, s_researchScore;
+    string firstName, lastName, s_cgpa, s_researchScore, country, s_read, s_listen, s_speak, s_write;
     float cgpa;
-    int researchScore;
-
+    int researchScore, read, listen, speak, write;
     //get firstName separated by comma
     getline(ss, firstName, ',');
-
     //get lastName separated by comma
     getline(ss, lastName, ',');
-
-    //get province separated by comma
-    getline(ss, province, ',');
-
+    //get country separated by comma
+    getline(ss, country, ',');
     //get cpga separated by comma, and convert string to float
     getline(ss, s_cgpa, ',');
     cgpa = atof(s_cgpa.c_str());
-    
     //get researchScore separated by comma, and convert it to int
     getline(ss, s_researchScore, ',');
     researchScore = atoi(s_researchScore.c_str());
-
-   
-    Istudent.setID(20200000+ID_count);
+	//get toeflscores, each seperated by commas, and convert each in to int
+	getline(ss, s_read, ',');
+    read = atoi(s_read.c_str());
+	getline(ss, s_listen, ',');
+    listen = atoi(s_listen.c_str());
+	getline(ss, s_speak, ',');
+    speak = atoi(s_speak.c_str());
+	getline(ss, s_write, ',');
+    write = atoi(s_write.c_str());
+    // Set all data to the Istudent object with mutator functions
+    Istudent.setfname(firstName);
+	Istudent.setlname(lastName);
+	Istudent.setCGPA(cgpa);
+	Istudent.setscore(researchScore);
+	Istudent.setID(ID_count);
+	Istudent.setcountry(country);
+	Istudent.TOEFL.setreading(read);
+	Istudent.TOEFL.setlistening(listen);
+	Istudent.TOEFL.setspeaking(speak);
+	Istudent.TOEFL.setwriting(write);
+	Istudent.TOEFL.settotalscore();
     
     //print the student info to the screen  
     cout << "Domestic student " << stu_count << " " << firstName << " " 
