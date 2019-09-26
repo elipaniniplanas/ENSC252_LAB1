@@ -195,7 +195,7 @@ void InternationalStudent::settoefl(int read, int write, int listen, int speak)
         TOEFL.setreading(read);
         TOEFL.setwriting(write);
         TOEFL.setlistening(listen);
-        TOEFL.setspeakig(speak);
+        TOEFL.setspeaking(speak);
         TOEFL.settotalscore();
 }
 int InternationalStudent::gettoeflread()
