@@ -172,7 +172,7 @@ void DomesticStudent::setprovince(string pv)
 {
         province = pv;
 }
-string DomesticStudent::getprovice()
+string DomesticStudent::getprovince()
 {
         return(province);
 }
