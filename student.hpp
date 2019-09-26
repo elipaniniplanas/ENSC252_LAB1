@@ -104,7 +104,7 @@ public:
         string getcountry(); 
         //gets toefl value from Toeflscore class
         void settoefl(int read, int write, int listen, int speak);
-        //outputs toefl value and total
+        //outputs toefl values and total
         int gettoeflread();
         int gettoeflwrite();
         int gettoefllisten();
