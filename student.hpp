@@ -101,7 +101,16 @@ public:
         //Mutator functions
         void setcountry(string co);
         //Accessor functions
-        string getcountry();        
+        string getcountry(); 
+        //gets toefl value from Toeflscore class
+        void settoefl(int read, int write, int listen, int speak);
+        //outputs toefl value and total
+        int gettoeflread();
+        int gettoeflwrite();
+        int gettoefllisten();
+        int gettoeflspeak();
+        int gettotal();
+        
 private:
         string country;
         ToeflScore TOEFL;
