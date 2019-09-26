@@ -70,9 +70,9 @@ int main(){
 	
 
     //print the student info to the screen  
-    cout << "Domestic student " << Dstu_count << " " << firstName << " " 
-	 << lastName << " from " << province << " province has cgpa of "
-	 << cgpa << ", and research score of " << researchScore << ", the assigned ID is " << Dstudent.getID() << endl;    
+    cout << "Domestic student " << Dstu_count << " " << Dstudent.getfname() << " " 
+	 << Dstudent.getlname() << " from " << Dstudent.getprovince() << " province has cgpa of "
+	 << Dstduent.getCGPA << ", and research score of " << Dstudent.getscore << ", the assigned ID is " << Dstudent.getID() << endl;    
 
     Dstu_count++;
     ID_count++;
@@ -134,9 +134,9 @@ int main(){
 	
     Istudent.setID(ID_count);
     //print the student info to the screen  
-    cout << "International student " << Istu_count << " " << firstName << " " 
-	 << lastName << " from " << country << " country has cgpa of "
-	 << cgpa << ", and research score of " << researchScore 
+    cout << "International student " << Istu_count << " " << Istudent.getfname() << " " 
+	 << Istudent.getlname() << " from " << Istudent.getcountry() << " country has cgpa of "
+	 << Istudent.getCGPA() << ", and research score of " << Istudent.getscore() 
 	    << ", the assigned ID is " << Istudent.getID() 
 	    << ", their toefl scores are: reading " << Istudent.gettoeflread() << ", writing "<< Istudent.gettoeflwrite()<< ", listening "<< Istudent.gettoefllisten() << ", speaking " << Istudent.gettoeflspeak()
 	    << ", and their total toefl score is " << Istudent.gettotal() <<endl;                        
