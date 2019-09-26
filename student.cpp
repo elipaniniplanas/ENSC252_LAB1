@@ -190,7 +190,7 @@ void InternationalStudent::setcountry(string co)
         country = co;
 }
 //this function can call on the TOEFL private members (i.e. a mutator function for a mutator function)
-void InternationalStudent::settoefl(int read, int write, int listen, int speak);
+void InternationalStudent::settoefl(int read, int write, int listen, int speak)
 {
         TOEFL.setreading(read);
         TOEFL.setwriting(write);
@@ -200,7 +200,7 @@ void InternationalStudent::settoefl(int read, int write, int listen, int speak);
 }
 int InternationalStudent::gettoeflread()
 {
-        return TOEFL.getreading()
+        return TOEFL.getreading();
         
 }
 int InternationalStudent::gettoeflwrite()
