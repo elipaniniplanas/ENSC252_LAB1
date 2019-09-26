@@ -4,6 +4,7 @@ using namespace std; //use namespace std
 #include <iostream>
 #pragma once
 
+//class for toefl score
 class ToeflScore
 {
 public:
@@ -31,22 +32,22 @@ public:
         //This is the accessor function for the speaking score
         int gettotalscore();
         //This is the accessor function for the sum of all of the scores in an object
-
+//the private variables 
 private:
-        int reading;
-        int writing;
-        int listening;
-        int speaking;
-        int totalscore;
+        int reading; //reading scores
+        int writing; //writing scores
+        int listening; //listening scores
+        int speaking; //speaking scores
+        int totalscore; //addition of all the toefl scores 
 };
 
 class STUDENT
 {
 public:
         STUDENT(string first, string last, float cgpa, int score, int id);
-        //This is the constructor function
+        //This is the constructor function fro STUDENT
         STUDENT();
-        //here
+        //Other Constructor for STUDENT (blank inputs, sets 0 for all members)
         void setfname(string first);
         //This is the mutator function for first name (takes datatype string for input)
         void setlname(string last);
@@ -77,30 +78,33 @@ private:
         //the id value will be set in the main.cpp
 };
 
+//creating child class for domestic student within the STDUENT class
 class DomesticStudent : public STUDENT
 {
 public:
         //Constructors
         DomesticStudent(string first, string last, float cgpa, int score, int id, string pv);
+        //Other Constructor for Domesticstduent (blank inputs, sets 0 for all members)
         DomesticStudent();
-        //Mutator functions
+        //Mutator functions for province
         void setprovince(string pv);
-        //Accessor functions
+        //Accessor functions for province
         string getprovince();
 private:
         string province;
 };
 
-
+//creating child class for international student within the STDUENT class
 class InternationalStudent : public STUDENT
 {
 public:    
         //Constructors for InternationalStudent
         InternationalStudent(string first, string last, float cgpa, int score, int id, string co, int read, int write , int listen, int speak);
+        //Other Constructor for InternationalStudent (blank inputs, sets 0 for all members)
         InternationalStudent();
-        //Mutator functions
+        //Mutator functions for country
         void setcountry(string co);
-        //Accessor functions
+        //Accessor functions country
         string getcountry(); 
         //gets toefl value from Toeflscore class
         void settoefl(int read, int write, int listen, int speak);
