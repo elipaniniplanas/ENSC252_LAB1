@@ -126,13 +126,14 @@ int main(){
 	Istudent.TOEFL.setspeaking(speak);
 	Istudent.TOEFL.setwriting(write);
 	Istudent.TOEFL.settotalscore();
-    
+	  
+    Istudent.setID(ID_count);
     //print the student info to the screen  
-    cout << "Domestic student " << stu_count << " " << firstName << " " 
-	 << lastName << " from " << province << " province has cgpa of "
+    cout << "Domestic student " << Istu_count << " " << firstName << " " 
+	 << lastName << " from " << country << " country has cgpa of "
 	 << cgpa << ", and research score of " << researchScore << ", the assigned ID is " << Istudent.getID() << endl;
 
-    stu_count++;
+    Istu_count++;
     ID_count++;
   }
 
