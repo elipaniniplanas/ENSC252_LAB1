@@ -172,6 +172,10 @@ void DomesticStudent::setprovince(string pv)
 {
         province = pv;
 }
+string DomesticStudent::getprovice()
+{
+        return(province);
+}
 //Constructor for the InternationalStudent class
 InternationalStudent::InternationalStudent(string first, string last, float cgpa, int score, int id, string co, int read, int write , int listen, int speak):
         STUDENT(first, last, cgpa, score, id)
