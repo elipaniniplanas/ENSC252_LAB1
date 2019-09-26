@@ -121,12 +121,8 @@ int main(){
 	Istudent.setscore(researchScore);
 	Istudent.setID(ID_count);
 	Istudent.setcountry(country);
-	Istudent.TOEFL.setreading(read);
-	Istudent.TOEFL.setlistening(listen);
-	Istudent.TOEFL.setspeaking(speak);
-	Istudent.TOEFL.setwriting(write);
-	Istudent.TOEFL.settotalscore();
-	  
+	Istudent.settoefl(read,write,listen,speak);
+	
     Istudent.setID(ID_count);
     //print the student info to the screen  
     cout << "Domestic student " << Istu_count << " " << firstName << " " 
