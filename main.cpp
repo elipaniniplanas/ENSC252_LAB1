@@ -13,8 +13,8 @@
 int main(){
   //Read the domestic-stu.txt file and exit if failed
   string line; //Used to retrieve the line in the files
-  DomesticStudent Dstudent(); // Constructed a DomesticStudent object
-  InternationalStudent Istudent(); // Constructed an InternationalStudent object
+  DomesticStudent Dstudent; // Constructed a DomesticStudent object
+  InternationalStudent Istudent; // Constructed an InternationalStudent object
   //accessing the domestic-stu.txt
   ifstream domesticFile("domestic-stu.txt");
   if(!domesticFile.is_open()) {
@@ -58,9 +58,10 @@ int main(){
     //get researchScore separated by comma, and convert it to int
     getline(ss, s_researchScore, ',');
     researchScore = atoi(s_researchScore.c_str());
+	  
     Dstudent.setID(ID_count);
     //print the student info to the screen  
-    cout << "Domestic student " << stu_count << " " << firstName << " " 
+    cout << "Domestic student " << Dstu_count << " " << firstName << " " 
 	 << lastName << " from " << province << " province has cgpa of "
 	 << cgpa << ", and research score of " << researchScore << ", the assigned ID is " << Dstudent.getID() << endl;    
 
@@ -74,7 +75,13 @@ int main(){
     cout << "Unable to open file international-stu.txt" << endl;
     return -1;
   }
+	
+	
+	
+	
+	
   getline(internationalFile, line);//this skips the first line about the file format
+  int Istu_count = 1;
   while( getline(internationalFile, line) ) {
     /*process each line, get each field separated by a comma.
      *We use istringstream to handle it.
