@@ -6,46 +6,36 @@
 #include <cstdlib> //atof and atoi
 #include "student.hpp"
 
-/*I provide example code here to help you read the input
- *data from a file, so that you can focus on creating
- *and manipulating classes and objects
- */
 int main(){
-  //Read the domestic-stu.txt file and exit if failed
-  string line; //Used to retrieve the line in the files
+  //Declare the varible used throughout the program
+  string line; //Used to retrieve a line in the files
   DomesticStudent Dstudent; // Constructed a DomesticStudent object
   InternationalStudent Istudent; // Constructed an InternationalStudent object
-  //accessing the domestic-stu.txt
+  //Read the domestic-stu.txt file and exit if failed
   ifstream domesticFile("domestic-stu.txt");
   if(!domesticFile.is_open()) {
     cout << "Unable to open file domestic-stu.txt" << endl;
     return -1;
   }
-
-  getline(domesticFile, line);//this skips the first line about the file format
-  //cout << "File format: " << line << endl;
-
-  /*Keep reading the rest of the lines in domestic-stu.txt.
-   *In the example code here, I will read each data separated
-   *by a comma, and then print it out to the screen.
-   *In your lab assignment 1, you should use these read data
-   *to initialize your DomesticStudent object. Then you can
-   *use get and set functions to manipulate your object, and
-   *print the object content to the screen
-   */
+  getline(domesticFile, line);//this skips the first line which is about the file format
+  //cout << "File format: " << line << endl; -- This line was from the origninal download file
+  //This int is to keep track which domestic student is being displayed and how many domestic student are there
   int Dstu_count = 1;
-  int ID_count = 20200000; // This int will increment each loop to generate a unique id for each student
+  // This int will increment each loop to generate a unique id for each student
+  int ID_count = 20200000; 
   while( getline(domesticFile, line) ) {
     /*process each line, get each field separated by a comma.
      *We use istringstream to handle it.
-     *Note in this example code here, we assume the file format
-     *is perfect and do NOT handle error cases. We will leave the
-     *error and exception handling of file format to Lab Assignment 4
-     */
+     *Note in this code here, we assume the file format
+     *is perfect and do NOT handle error cases.*/
+	  
+    //make the string from the line in the file into a istringstream to parse the data
     istringstream ss(line);
+    //Declair variables to hold the data parsed from the file/lines
     string firstName, lastName, province, s_cgpa, s_researchScore;
     float cgpa;
     int researchScore;
+	  
     //get firstName separated by comma
     getline(ss, firstName, ',');
     //get lastName separated by comma
@@ -59,37 +49,33 @@ int main(){
     getline(ss, s_researchScore, ',');
     researchScore = atoi(s_researchScore.c_str());
 	  
+    // Set all data to the Istudent object with mutator functions
     Dstudent.setID(ID_count);
-     // Set all data to the Istudent object with mutator functions
     Dstudent.setfname(firstName);
     Dstudent.setlname(lastName);
     Dstudent.setCGPA(cgpa);
     Dstudent.setscore(researchScore);
     Dstudent.setID(ID_count);
     Dstudent.setprovince(province);
-	
-
+	  
     //print the student info to the screen  
     cout << "Domestic student " << Dstu_count << " " << Dstudent.getfname() << " " 
 	 << Dstudent.getlname() << " from " << Dstudent.getprovince() << " province has cgpa of "
-	 << Dstudent.getCGPA() << ", and research score of " << Dstudent.getscore() << ", the assigned ID is " << Dstudent.getID() << endl;    
-
+	 << Dstudent.getCGPA() << ", and research score of " << Dstudent.getscore() << ", the assigned ID is "
+	 << Dstudent.getID() << endl;    
+    //Generate a new ID and prepare to the next iteration of the loop
     Dstu_count++;
     ID_count++;
   }
-  
+  //Here begins the proccess of getting and setting the data for international students
   //accessing the international-stu.txt
   ifstream internationalFile("international-stu.txt");
   if(!internationalFile.is_open()) {
     cout << "Unable to open file international-stu.txt" << endl;
     return -1;
-  }
-	
-	
-	
-	
-	
-  getline(internationalFile, line);//this skips the first line about the file format
+  }	
+  getline(internationalFile, line);//this skips the first line which is about the file format
+  //This is used to keep track of which student is being printed out and keeps track of how many international students there are
   int Istu_count = 1;
   while( getline(internationalFile, line) ) {
     /*process each line, get each field separated by a comma.
