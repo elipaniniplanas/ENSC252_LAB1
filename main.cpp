@@ -72,7 +72,7 @@ int main(){
     //print the student info to the screen  
     cout << "Domestic student " << Dstu_count << " " << Dstudent.getfname() << " " 
 	 << Dstudent.getlname() << " from " << Dstudent.getprovince() << " province has cgpa of "
-	 << Dstduent.getCGPA << ", and research score of " << Dstudent.getscore << ", the assigned ID is " << Dstudent.getID() << endl;    
+	 << Dstudent.getCGPA << ", and research score of " << Dstudent.getscore << ", the assigned ID is " << Dstudent.getID() << endl;    
 
     Dstu_count++;
     ID_count++;
