@@ -60,6 +60,15 @@ int main(){
     researchScore = atoi(s_researchScore.c_str());
 	  
     Dstudent.setID(ID_count);
+     // Set all data to the Istudent object with mutator functions
+    Dstudent.setfname(firstName);
+    Dstudent.setlname(lastName);
+    Dstudent.setCGPA(cgpa);
+    Dstudent.setscore(researchScore);
+    Dstudent.setID(ID_count);
+    Dstudent.setprovince(province);
+	
+
     //print the student info to the screen  
     cout << "Domestic student " << Dstu_count << " " << firstName << " " 
 	 << lastName << " from " << province << " province has cgpa of "
@@ -116,18 +125,21 @@ int main(){
     write = atoi(s_write.c_str());
     // Set all data to the Istudent object with mutator functions
     Istudent.setfname(firstName);
-	Istudent.setlname(lastName);
-	Istudent.setCGPA(cgpa);
-	Istudent.setscore(researchScore);
-	Istudent.setID(ID_count);
-	Istudent.setcountry(country);
-	Istudent.settoefl(read,write,listen,speak);
+    Istudent.setlname(lastName);
+    Istudent.setCGPA(cgpa);
+    Istudent.setscore(researchScore);
+    Istudent.setID(ID_count);
+    Istudent.setcountry(country);
+    Istudent.settoefl(read,write,listen,speak);
 	
     Istudent.setID(ID_count);
     //print the student info to the screen  
-    cout << "Domestic student " << Istu_count << " " << firstName << " " 
+    cout << "International student " << Istu_count << " " << firstName << " " 
 	 << lastName << " from " << country << " country has cgpa of "
-	 << cgpa << ", and research score of " << researchScore << ", the assigned ID is " << Istudent.getID() << endl;
+	 << cgpa << ", and research score of " << researchScore 
+	    << ", the assigned ID is " << Istudent.getID() 
+	    << ", their toefl scores are: reading " << Istudent.gettoeflread() << ", writing "<< Istudent.gettoeflwrite()<< ", listening "<< Istudent.gettoefllisten() << ", speaking " << Istudent.gettoeflspeak()
+	    << ", and their total toefl score is " << Istudent.gettotal() <<endl;                        
 
     Istu_count++;
     ID_count++;
