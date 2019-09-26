@@ -5,28 +5,25 @@
 //ToeflScore constructor
 ToeflScore::ToeflScore(int read, int write, int listen, int speak)
 {
+        //Error checking to make sure the values are in range
         if(read <0 || read > 30)
         {
                 cout << "sorry, your reading toeflScore is invalid";
-
         }
 
         if(write <0 || write > 30)
         {
                 cout << "sorry, your writing toeflScore is invalid";
-
         }
 
         if(listen <0 || listen > 30)
         {
                 cout << "sorry, your listening toeflScore is invalid";
-
         }
 
         if(speak <0 || speak > 30)
         {
                 cout << "sorry, your speaking toeflScore is invalid";
-
         }
         reading = read;
         writing = write;
@@ -89,16 +86,14 @@ int ToeflScore::gettotalscore()
 //Student constructor
 STUDENT::STUDENT(string first, string last, float cgpa, int score, int id)
 {
-        //Error checking, making sure that the 
+        //Error checking, making sure that the proper values are in range 
         if(cgpa > 4.3 || cgpa < 0)
         {
                 cout<<"sorry, but your CGPA is invalid";
-
         }
         if(score < 0 || score > 100)
         {
                 cout<<"sorry, but your research score is invalid";
-
         }
         fname = first;
         lname = last;
@@ -162,7 +157,6 @@ DomesticStudent::DomesticStudent(string first, string last, float cgpa, int scor
 {
         province = pv;
 }
-//This Constructor is for no inputs
 DomesticStudent::DomesticStudent():STUDENT()
 {
         province = " ";
@@ -172,6 +166,7 @@ void DomesticStudent::setprovince(string pv)
 {
         province = pv;
 }
+//Accessor function for DomesticStudent
 string DomesticStudent::getprovince()
 {
         return(province);
@@ -193,7 +188,7 @@ void InternationalStudent::setcountry(string co)
 {
         country = co;
 }
-//this function can call on the TOEFL private members (i.e. a mutator function for a mutator function)
+//This mutator function need call on the TOEFL private members, so ToeflScore's mutator functions are used
 void InternationalStudent::settoefl(int read, int write, int listen, int speak)
 {
         TOEFL.setreading(read);
@@ -202,10 +197,10 @@ void InternationalStudent::settoefl(int read, int write, int listen, int speak)
         TOEFL.setspeaking(speak);
         TOEFL.settotalscore();
 }
+//As the same situation as above, to access the values of the TOEFL object, ToeflScore's accessor functions are used in these accessor functions
 int InternationalStudent::gettoeflread()
 {
         return TOEFL.getreading();
-        
 }
 int InternationalStudent::gettoeflwrite()
 {
@@ -223,7 +218,6 @@ int InternationalStudent::gettotal()
 {
         return TOEFL.gettotalscore();
 }
-
 //Accessor Functions for the InternationalStudent class
 string InternationalStudent::getcountry()
 {
